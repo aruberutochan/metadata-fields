@@ -1,0 +1,20 @@
+{
+    "name": "aruberuto/metadata-fields",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "aruberutoChan",
+            "email": "albertoguerrerogarcia@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aruberuto\\MetadataFields\\MetadataFieldsServiceProvider"
+            ]
+        }
+    }
+
+}
