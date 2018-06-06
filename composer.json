@@ -9,6 +9,11 @@
         }
     ],
     "require": {},
+    "autoload": {
+        "psr-4": {
+          "Aruberuto\\MetadataFields\\": "src"
+        }
+      },
     "extra": {
         "laravel": {
             "providers": [
