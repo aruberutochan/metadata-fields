@@ -18,6 +18,13 @@ class MetadataFieldsServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/views' => base_path('resources/views/metadata-fields'),
         ]);
+        if (! class_exists('CreateMetadataTable')) {
+            $timestamp = date('Y_m_d_His', time());
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_metadata_table.php' => $this->app->databasePath()."/migrations/{$timestamp}_create_metadata_table.php",
+            ], 'migrations');
+        }
+
 
     }
 
