@@ -1,0 +1,16 @@
+
+@import "~bootstrap-fileinput/scss/fileinput";
+
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+    height: 100%;
+  }
+
+
+#map-container {
+    height: 450px;
+
+}

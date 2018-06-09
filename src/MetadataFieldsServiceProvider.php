@@ -13,11 +13,15 @@ class MetadataFieldsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/views', 'metadata-fields');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'fields');
 
+        $this->publishes([__DIR__.'/resources/views' => base_path('resources/views/vendor/metadata-fields'),]);
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views/metadata-fields'),
-        ]);
+            __DIR__.'/public/js' => public_path('vendor/aruberuto/metadata-fields/js'),
+            __DIR__.'/public/css' => public_path('vendor/aruberuto/metadata-fields/css'),
+            __DIR__.'/public/fonts' => public_path('fonts/vendor')
+        ], 'public');
+
         if (! class_exists('CreateMetadataTable')) {
             $timestamp = date('Y_m_d_His', time());
             $this->publishes([
@@ -35,6 +39,7 @@ class MetadataFieldsServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        require_once(__DIR__ . '/helpers/helper.php');
         $this->app->make('Aruberuto\MetadataFields\Controllers\MetadataFieldController');
     }
 }
