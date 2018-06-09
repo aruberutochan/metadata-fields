@@ -8,8 +8,7 @@
     }],
     "minimum-stability": "dev",
     "require": {
-        "laravelcollective/html": "^5.6@dev",
-        "kartik-v/bootstrap-fileinput": "^4.4@dev"
+        "laravelcollective/html": "^5.6@dev"
     },
     "autoload": {
         "psr-4": {
